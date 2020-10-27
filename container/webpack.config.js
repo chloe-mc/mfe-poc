@@ -54,7 +54,7 @@ module.exports = {
       filename: 'remoteEntry.js',
       remotes: {
         app_02: 'app_02@http://localhost:3002/remoteEntry.js',
-        app_03: 'app_03@http://localhost:3003/remoteEntry.js',
+        posts_react: 'posts_react@http://localhost:3003/remoteEntry.js',
         docs_svelte: 'docs_svelte@http://localhost:3004/remoteEntry.js',
         app_05: 'app_05@http://localhost:3005/remoteEntry.js',
       },

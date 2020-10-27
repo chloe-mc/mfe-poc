@@ -1,29 +1,13 @@
-import {
-  AppBar,
-  Box,
-  Tab,
-  Tabs,
-  Typography,
-  makeStyles
-} from "@material-ui/core";
-import {
-  Redirect,
-  Route,
-  Switch,
-  useHistory,
-  useLocation,
-  useRouteMatch
-} from "react-router-dom";
+import { AppBar, Box, Tab, Tabs, Typography, makeStyles } from '@material-ui/core';
+import { Redirect, Route, Switch, useHistory, useLocation, useRouteMatch } from 'react-router-dom';
 
-import React from "react";
+import React from 'react';
 
-const Button = React.lazy(() => import("app_03/Button"));
-
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    backgroundColor: theme.palette.background.paper
-  }
+    backgroundColor: theme.palette.background.paper,
+  },
 }));
 
 export default function TabsComponent() {
@@ -39,7 +23,8 @@ export default function TabsComponent() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      TODO: layers
+      {/* <AppBar position="static">
         <Tabs value={location.pathname} onChange={handleChange}>
           <Tab label="Foo" value={`${rootPath}/foo`} />
           <Tab label="Bar" value={`${rootPath}/bar`} />
@@ -64,7 +49,7 @@ export default function TabsComponent() {
             </Box>
           </Typography>
         </Route>
-      </Switch>
+      </Switch> */}
     </div>
   );
 }

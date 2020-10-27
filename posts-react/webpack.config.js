@@ -1,6 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ModuleFederationPlugin = require('webpack').container.ModuleFederationPlugin;
-const deps = require('./package.json').dependencies;
+
 module.exports = {
   entry: './src/index',
   cache: false,
@@ -42,24 +42,12 @@ module.exports = {
 
   plugins: [
     new ModuleFederationPlugin({
-      name: 'app_02',
+      name: 'posts_react',
       filename: 'remoteEntry.js',
-      remotes: {
-        container: 'container@http://localhost:3001/remoteEntry.js',
-      },
       exposes: {
-        './SatelliteStreetToggle': './src/SatelliteStreetToggle',
-        './Dialog': './src/Dialog',
-        './Tabs': './src/Tabs',
+        './App': './src/App',
       },
       shared: {
-        ...deps,
-        '@material-ui/core': {
-          singleton: true,
-        },
-        'react-router-dom': {
-          singleton: true,
-        },
         'react-dom': {
           singleton: true,
         },
@@ -70,7 +58,6 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: './public/index.html',
-      chunks: ['main'],
     }),
   ],
 };
