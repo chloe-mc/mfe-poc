@@ -21,7 +21,7 @@ const useStyles = makeStyles(() =>
 );
 
 const Map = ReactMapboxGL({
-  accessToken: process.env.MAPBOX_API_TOKEN,
+  accessToken: process.env.MAPBOX_ACCESS_TOKEN,
 });
 
 function App() {
