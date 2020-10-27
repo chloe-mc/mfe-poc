@@ -264,6 +264,21 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
+"@bluebeam/eslint-config-atlas-react@^0.3.3":
+  version "0.3.5"
+  resolved "https://bluebeam.jfrog.io/bluebeam/api/npm/npm-local/@bluebeam/eslint-config-atlas-react/-/@bluebeam/eslint-config-atlas-react-0.3.5.tgz#8f17469573693b6a75016851ea21ef1d51f96610"
+  integrity sha1-jxdGlXNpO2p1AWhR6iHvHVH5ZhA=
+
+"@bluebeam/eslint-config-atlas@^0.3.2":
+  version "0.3.4"
+  resolved "https://bluebeam.jfrog.io/bluebeam/api/npm/npm-local/@bluebeam/eslint-config-atlas/-/@bluebeam/eslint-config-atlas-0.3.4.tgz#14c2571bc516a08936c8adac0087d60face2af67"
+  integrity sha1-FMJXG8UWoIk2yK2sAIfWD6zir2c=
+
+"@bluebeam/prettier-config-atlas@^0.5.0":
+  version "0.5.1"
+  resolved "https://bluebeam.jfrog.io/bluebeam/api/npm/npm-local/@bluebeam/prettier-config-atlas/-/@bluebeam/prettier-config-atlas-0.5.1.tgz#5347280ec3a3f2d8786c5335e7baed4d94244b82"
+  integrity sha1-U0coDsOj8th4bFM157rtTZQkS4I=
+
 "@cnakazawa/watch@^1.0.3":
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/@cnakazawa/watch/-/watch-1.0.4.tgz#f864ae85004d0fcab6f50be9141c4da368d1656a"

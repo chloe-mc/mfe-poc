@@ -1,88 +1,61 @@
 import {
-  Divider,
   Drawer,
-  List,
-  ListItem,
-  ListItemText,
-  ListSubheader,
-  Typography,
+  Paper,
+  Tabs,
+  Tab,
   createStyles,
   makeStyles,
 } from "@material-ui/core";
+import LayersIcon from '@material-ui/icons/Layers';
+import DocsIcon from '@material-ui/icons/LibraryBooks';
+import PostsIcon from '@material-ui/icons/Place';
+import TeamIcon from '@material-ui/icons/People';
 
 import { Link } from "react-router-dom";
 import React from "react";
 
-const drawerWidth = 240;
+import Routes from "./Routes";
+
+const drawerWidth = 250;
 
 const useStyles = makeStyles((theme) =>
   createStyles({
     drawer: {
-      width: drawerWidth,
-      flexShrink: 0,
-    },
-    drawerPaper: {
-      width: drawerWidth,
-    },
-    toolbar: {
-      ...theme.mixins.toolbar,
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-    },
+      flex: 1
+    }
   })
 );
 
 export default function SideNav() {
   const classes = useStyles();
 
+  const [value, setValue] = React.useState(0);
+
+  const handleChange = (_, newValue) => {
+    setValue(newValue);
+  };
+
   return (
     <Drawer
       className={classes.drawer}
       variant="permanent"
-      classes={{
-        paper: classes.drawerPaper,
-      }}
       anchor="left"
     >
-      <div className={classes.toolbar}>
-        <Typography variant="h6">SideNav</Typography>
-      </div>
-      <Divider />
-      <List>
-        <ListSubheader>Demo Pages</ListSubheader>
-        <ListItem button component={Link} to="/">
-          <ListItemText primary="Main" />
-        </ListItem>
-        <ListItem button component={Link} to="/ui-library">
-          <ListItemText primary="UI Library" />
-        </ListItem>
-        <ListItem button component={Link} to="/dialog">
-          <ListItemText primary="Dialog" />
-        </ListItem>
-        <ListItem button component={Link} to="/svelte">
-          <ListItemText primary="Svelte Page" />
-        </ListItem>
-        <ListItem button component={Link} to="/routing/foo">
-          <ListItemText primary="Routing" />
-        </ListItem>
-        <ListSubheader>Apps</ListSubheader>
-        <ListItem button component="a" href="http://localhost:3001">
-          <ListItemText primary="App #1" secondary="http://localhost:3001" />
-        </ListItem>
-        <ListItem button component="a" href="http://localhost:3002">
-          <ListItemText primary="App #2" secondary="http://localhost:3002" />
-        </ListItem>
-        <ListItem button component="a" href="http://localhost:3003">
-          <ListItemText primary="App #3" secondary="http://localhost:3003" />
-        </ListItem>
-        <ListItem button component="a" href="http://localhost:3004">
-          <ListItemText primary="App #4" secondary="http://localhost:3004" />
-        </ListItem>
-        <ListItem button component="a" href="http://localhost:3005">
-          <ListItemText primary="App #5" secondary="http://localhost:3005" />
-        </ListItem>
-      </List>
+      <Paper square>
+        <Tabs
+          indicatorColor="secondary"
+          onChange={handleChange}
+          textColor="secondary"
+          value={value}
+          variant="fullWidth"
+        >
+          <Tab icon={<LayersIcon />} label="LAYERS" component={Link} to="/layers" />
+          <Tab icon={<DocsIcon />} label="DOCS" component={Link} to="/docs"/>
+          <Tab icon={<PostsIcon />} label="POSTS" component={Link} to="/posts"/>
+          <Tab icon={<TeamIcon />} label="TEAM" component={Link} to="/team"/>
+        </Tabs>
+      </Paper>
+      <Routes />
     </Drawer>
   );
 }

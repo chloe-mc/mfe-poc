@@ -1,21 +1,22 @@
-import { Route, Switch } from "react-router-dom";
+import { Redirect, Route, Switch } from "react-router-dom";
+import React from "react";
 
 import DialogPage from "./pages/dialog-page";
-import IndexPage from "./pages/index-page";
-import React from "react";
 import RoutingPage from "./pages/routing-page";
 import SveltePage from "./pages/svelte-page";
 import UiLibraryPage from "./pages/ui-library-page";
 
 const Routes = () => (
   <Switch>
-    <Route path="/" exact={true}>
-      <IndexPage />
+    <Route path="/layers">
+      <DialogPage />
     </Route>
-    <Route path="/dialog" component={DialogPage} />
-    <Route path="/ui-library" component={UiLibraryPage} />
-    <Route path="/routing" component={RoutingPage} />
-    <Route path="/svelte" component={SveltePage} />
+    <Route path="/docs" component={SveltePage} />
+    <Route path="/posts" component={RoutingPage} />
+    <Route path="/team" component={UiLibraryPage} />
+    <Route exact path="/">
+      <Redirect to="/layers" />
+    </Route>
   </Switch>
 );
 

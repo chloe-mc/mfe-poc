@@ -1,32 +1,21 @@
 import React from "react";
-import Page from "../Page";
-import { makeStyles } from '@material-ui/core/styles';
+import loadApp from "docs_svelte/loadApp";
 import TextField from '@material-ui/core/TextField';
-import loadApp from "app_04/loadApp";
-
-const useStyles = makeStyles(theme => ({
-  root: {
-    '& > *': {
-      margin: theme.spacing(1),
-      width: 200,
-    },
-  },
-}));
+import { Divider } from "@material-ui/core";
 
 const SveltePage = () => {
-  const [name, setName] = React.useState("federation");
+  const [projectName, setProjectName] = React.useState("San Antonio Hospital");
+
   const mountEl = React.useRef();
-  const classes = useStyles();
 
   React.useEffect(() => {
     if (mountEl.current.innerHTML.length === 0) {
-      loadApp("app_04", name);
+      loadApp("docs_svelte", projectName);
     }
   })
 
-
   const handleChange = (e) => {
-    setName(e.target.value);
+    setProjectName(e.target.value);
     const event = new CustomEvent("change-name", {
       detail: {
         name: e.target.value
@@ -40,14 +29,13 @@ const SveltePage = () => {
   }
 
   return (
-    <Page title="Svelte Demo">
-
-      <form className={classes.root} noValidate autoComplete="off">
-        <TextField id="standard-basic" label="Name" value={name} onChange={(e) => handleChange(e)} />
-        <div id="app_04" ref={mountEl}></div>
+    <>
+      <form noValidate autoComplete="off" style={ { margin: 20, width: '100%' }}>
+        <TextField  id="standard-basic" label="Text Field in React Container" value={projectName} onChange={(e) => handleChange(e)} style={{ width: 300}}/>
       </form>
-
-    </Page>
+      <Divider />
+      <div id="docs_svelte" ref={mountEl} />
+    </>
   )
 }
 

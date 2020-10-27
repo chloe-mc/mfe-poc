@@ -7,6 +7,9 @@
     "clean": "lerna run --parallel clean"
   },
   "devDependencies": {
+    "@bluebeam/eslint-config-atlas": "^0.3.2",
+    "@bluebeam/eslint-config-atlas-react": "^0.3.3",
+    "@bluebeam/prettier-config-atlas": "^0.5.0",
     "concurrently": "5.3.0",
     "cross-spawn": "^7.0.3",
     "husky": "4.3.0",

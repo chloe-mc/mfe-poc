@@ -1,29 +1,40 @@
 import { CssBaseline, createStyles, makeStyles } from "@material-ui/core";
 
-import { HashRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import React from "react";
-import Routes from "./Routes";
 import SideNav from "./SideNav";
 
-const useStyles = makeStyles(theme =>
+const useStyles = makeStyles(() =>
   createStyles({
     root: {
       display: "flex"
+    },
+    sideBar: {
+      flex: 1,
+    },
+    map: {
+      flex: 2,
+      textAlign: 'center',
     }
   })
 );
 
 function App() {
+
   const classes = useStyles();
 
   return (
-    <HashRouter>
+    <BrowserRouter>
       <CssBaseline />
       <div className={classes.root}>
-        <SideNav />
-        <Routes />
+        <div className={classes.sideBar}>
+          <SideNav />
+        </div>
+        <div className={classes.map}>
+          Map Goes Here
+        </div>
       </div>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 

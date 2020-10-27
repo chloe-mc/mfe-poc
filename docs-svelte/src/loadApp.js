@@ -1,9 +1,9 @@
-import App from "./App.svelte";
+import App from './App.svelte';
 
-const loadApp = (id, name) => {
+const loadApp = (id, projectName) => {
   return new App({
     target: document.querySelector(`#${id}`),
-    props: { name },
+    props: { projectName },
   });
 };
 
