@@ -16,4 +16,5 @@
 </style>
 
 <h1>SVELTE APP</h1>
+<h4>Using events to communicate between <code>container</code> and <code>docs-svelte</code>.</h4>
 <h4>Project: {projectName}</h4>

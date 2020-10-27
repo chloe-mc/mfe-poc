@@ -1,18 +1,11 @@
 import App from './App.svelte';
 
 const app = new App({
-  target: document.querySelector('#docs_svelte'),
+  target: document.body,
   props: {
-    name: 'world',
+    projectName: 'Placeholder Project',
   },
 });
-
-export const loadApp = (id) => {
-  return new App({
-    target: document.querySelector('#docs_svelte'),
-    props: { name: 'world' },
-  });
-};
 
 window.app = app;
 
