@@ -1,13 +1,13 @@
-import { CssBaseline, createStyles, makeStyles } from "@material-ui/core";
+import { CssBaseline, createStyles, makeStyles } from '@material-ui/core';
 
-import { BrowserRouter } from "react-router-dom";
-import React from "react";
-import SideNav from "./SideNav";
+import { BrowserRouter } from 'react-router-dom';
+import React from 'react';
+import SideNav from './SideNav';
 
 const useStyles = makeStyles(() =>
   createStyles({
     root: {
-      display: "flex"
+      display: 'flex',
     },
     sideBar: {
       flex: 1,
@@ -15,12 +15,11 @@ const useStyles = makeStyles(() =>
     map: {
       flex: 2,
       textAlign: 'center',
-    }
+    },
   })
 );
 
 function App() {
-
   const classes = useStyles();
 
   return (
@@ -30,9 +29,7 @@ function App() {
         <div className={classes.sideBar}>
           <SideNav />
         </div>
-        <div className={classes.map}>
-          Map Goes Here
-        </div>
+        <div className={classes.map}>Map Goes Here</div>
       </div>
     </BrowserRouter>
   );
