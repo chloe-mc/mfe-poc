@@ -50,6 +50,7 @@ module.exports = {
         app_03: "app_03@http://localhost:3003/remoteEntry.js",
       },
       exposes: {
+        "./SatelliteStreetToggle": "./src/SatelliteStreetToggle",
         "./Dialog": "./src/Dialog",
         "./Tabs": "./src/Tabs",
       },

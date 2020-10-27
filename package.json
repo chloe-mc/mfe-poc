@@ -2,6 +2,7 @@
   "private": true,
   "scripts": {
     "start": "concurrently \"lerna run --parallel start\" \"yarn serve\"",
+    "bootstrap": "lerna bootstrap",
     "build": "lerna run build",
     "serve": "lerna run --parallel serve",
     "clean": "lerna run --parallel clean"

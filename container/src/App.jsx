@@ -1,3 +1,4 @@
+import ReactMapboxGL from 'react-mapbox-gl';
 import { CssBaseline, createStyles, makeStyles } from '@material-ui/core';
 
 import { BrowserRouter } from 'react-router-dom';
@@ -19,8 +20,14 @@ const useStyles = makeStyles(() =>
   })
 );
 
+const Map = ReactMapboxGL({
+  accessToken: process.env.MAPBOX_ACCESS_TOKEN,
+});
+
 function App() {
   const classes = useStyles();
+
+  const style = 'street';
 
   return (
     <BrowserRouter>
@@ -29,7 +36,19 @@ function App() {
         <div className={classes.sideBar}>
           <SideNav />
         </div>
-        <div className={classes.map}>Map Goes Here</div>
+        <div className={classes.map}>
+          <Map
+            style={
+              style === 'street'
+                ? 'mapbox://styles/mapbox/streets-v9'
+                : 'mapbox://styles/mapbox/satellite-v9'
+            }
+            containerStyle={{
+              height: '100vh',
+              width: '100vw',
+            }}
+          />
+        </div>
       </div>
     </BrowserRouter>
   );

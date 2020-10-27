@@ -1,6 +1,10 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ModuleFederationPlugin = require('webpack').container.ModuleFederationPlugin;
+const webpack = require('webpack');
 const deps = require('./package.json').dependencies;
+
+const ModuleFederationPlugin = webpack.container.ModuleFederationPlugin;
+const EnvironmentPlugin = webpack.EnvironmentPlugin;
+
 module.exports = {
   entry: './src/index',
   cache: false,
@@ -77,5 +81,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './public/index.html',
     }),
+    new EnvironmentPlugin(['MAPBOX_ACCESS_TOKEN']),
   ],
 };

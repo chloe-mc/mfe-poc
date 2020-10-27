@@ -1,11 +1,10 @@
 # Getting Started
 
-```sh
-yarn install
-yarn start
-```
-
-Open [http://localhost:3001](http://localhost:3001).
+1. Set the environment variable `MAPBOX_ACCESS_TOKEN`
+2. Run `yarn install`
+3. Run `yarn bootstrap`
+4. Run `yarn start`
+5. Open [http://localhost:3001](http://localhost:3001).
 
 Included apps:
 
