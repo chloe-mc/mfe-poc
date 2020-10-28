@@ -53,11 +53,11 @@ module.exports = {
       name: 'container',
       filename: 'remoteEntry.js',
       remotes: {
-        app_02: 'app_02@http://localhost:3002/remoteEntry.js',
-        posts_react: 'posts_react@http://localhost:3003/remoteEntry.js',
-        docs_svelte: 'docs_svelte@http://localhost:3004/remoteEntry.js',
-        map_react: 'map_react@http://localhost:3006/remoteEntry.js',
-        app_05: 'app_05@http://localhost:3005/remoteEntry.js',
+        app_02: 'app_02@https://app-02-blissful-knuth-69a806.netlify.app/remoteEntry.js',
+        posts_react: 'posts_react@https://posts-react-romantic-mestorf-fd497b.netlify.app/remoteEntry.js',
+        docs_svelte: 'docs_svelte@https://docs-svelte-determined-snyder-8dd385.netlify.app/remoteEntry.js',
+        map_react: 'map_react@https://map-react-gifted-swanson-cc42fe.netlify.app/remoteEntry.js',
+        app_05: 'app_05@https://app-05-gracious-mcnulty-004784.netlify.app/remoteEntry.js',
       },
       exposes: {
         './SideNav': './src/SideNav',

@@ -49,7 +49,7 @@ module.exports = {
       name: 'map_react',
       filename: 'remoteEntry.js',
       remotes: {
-        container: 'container@http://localhost:3001/remoteEntry.js',
+        container: 'container@https://container-elastic-clarke-4ee228.netlify.app/remoteEntry.js',
       },
       exposes: {
         './Map': './src/Map',
