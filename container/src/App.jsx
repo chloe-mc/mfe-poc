@@ -1,9 +1,10 @@
-import ReactMapboxGL from 'react-mapbox-gl';
 import { CssBaseline, createStyles, makeStyles } from '@material-ui/core';
 
 import { BrowserRouter } from 'react-router-dom';
 import React from 'react';
 import SideNav from './SideNav';
+
+const Map = React.lazy(() => import('map_react/Map'));
 
 const useStyles = makeStyles(() =>
   createStyles({
@@ -20,14 +21,8 @@ const useStyles = makeStyles(() =>
   })
 );
 
-const Map = ReactMapboxGL({
-  accessToken: process.env.MAPBOX_ACCESS_TOKEN,
-});
-
 function App() {
   const classes = useStyles();
-
-  const style = 'street';
 
   return (
     <BrowserRouter>
@@ -37,17 +32,9 @@ function App() {
           <SideNav />
         </div>
         <div className={classes.map}>
-          <Map
-            style={
-              style === 'street'
-                ? 'mapbox://styles/mapbox/streets-v9'
-                : 'mapbox://styles/mapbox/satellite-v9'
-            }
-            containerStyle={{
-              height: '100vh',
-              width: '100vw',
-            }}
-          />
+          <React.Suspense fallback="Loading map..." >
+            <Map />
+          </React.Suspense>
         </div>
       </div>
     </BrowserRouter>

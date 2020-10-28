@@ -1,11 +1,12 @@
-import { ToggleButton, ToggleButtonGroup } from '@material-ui/lab';
-
 import React from 'react';
+import { ToggleButton, ToggleButtonGroup } from '@material-ui/lab';
+import { SatelliteStreetToggleSubject } from 'container/channels';
 
 const SatelliteStreetToggle = () => {
   const [toggleValue, setToggleValue] = React.useState('street');
 
   const handleToggle = (_, newValue) => {
+    SatelliteStreetToggleSubject.next(newValue);
     setToggleValue(newValue);
   };
 

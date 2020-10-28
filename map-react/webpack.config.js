@@ -41,34 +41,21 @@ module.exports = {
           presets: [require.resolve('@babel/preset-react')],
         },
       },
-      {
-        test: /\.md$/,
-        loader: 'raw-loader',
-      },
     ],
   },
 
   plugins: [
     new ModuleFederationPlugin({
-      name: 'container',
+      name: 'map_react',
       filename: 'remoteEntry.js',
       remotes: {
-        app_02: 'app_02@http://localhost:3002/remoteEntry.js',
-        posts_react: 'posts_react@http://localhost:3003/remoteEntry.js',
-        docs_svelte: 'docs_svelte@http://localhost:3004/remoteEntry.js',
-        map_react: 'map_react@http://localhost:3006/remoteEntry.js',
-        app_05: 'app_05@http://localhost:3005/remoteEntry.js',
+        container: 'container@http://localhost:3001/remoteEntry.js',
       },
       exposes: {
-        './SideNav': './src/SideNav',
-        './Page': './src/Page',
-        './channels': './src/channels',
+        './Map': './src/Map',
       },
       shared: {
         ...deps,
-        '@material-ui/core': {
-          singleton: true,
-        },
         'react-router-dom': {
           singleton: true,
         },
@@ -77,11 +64,12 @@ module.exports = {
         },
         react: {
           singleton: true,
-        }
+        },
       },
     }),
     new HtmlWebpackPlugin({
       template: './public/index.html',
+      chunks: ['main'],
     }),
     new EnvironmentPlugin(['MAPBOX_ACCESS_TOKEN']),
   ],
